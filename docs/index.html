@@ -105,7 +105,7 @@
 
   /* Grid + card — 图片主导、紧凑单卡片 */
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .25s ease,border-color .2s;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .25s ease,border-color .2s;overflow:hidden;display:flex;flex-direction:column;position:relative;cursor:pointer}
   .card:hover{transform:translateY(-5px);box-shadow:0 2px 6px rgba(20,19,26,.06),0 26px 60px rgba(91,75,255,.16);border-color:#cbc4f2}
 
   /* 封面图：16:9 与原图比例一致，hover 轻微放大 */
@@ -125,6 +125,8 @@
   .card-body .card-open svg{width:14px;height:14px;transition:transform .2s ease}
   .card-body .card-open:hover{color:var(--accent)}
   .card-body .card-open:hover svg{transform:translate(2px,-2px)}
+  /* 整卡可点：链接伪元素铺满卡片，保留链接语义与 Cmd+点击新标签 */
+  .card-body .card-open::after{content:"";position:absolute;inset:0;z-index:1;border-radius:var(--radius)}
 
   .cta-band{margin:24px auto 0;max-width:var(--maxw);border-radius:26px;padding:64px 44px;text-align:center;color:#fff;position:relative;overflow:hidden;
     background:linear-gradient(125deg,#312e81 0%,#4f46e5 34%,#9333ea 72%,#db4c1e 120%)}
