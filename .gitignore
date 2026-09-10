@@ -1,0 +1,7 @@
+# 生成物：由 scripts/build-single.py 产出
+docs/index_single.html
+
+# 系统与编辑器
+.DS_Store
+.vscode/
+.idea/
